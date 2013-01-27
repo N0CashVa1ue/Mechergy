@@ -1,0 +1,11 @@
+/cpw/*
+/ibxm/*
+/net/*
+/paulscode/*
+
+!/suitedslime/*
+
+*.cfg
+*.properties
+*.info
+*.png
