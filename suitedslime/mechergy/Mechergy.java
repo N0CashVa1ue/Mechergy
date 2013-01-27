@@ -63,7 +63,7 @@ public class Mechergy {
 	}
 	
 	@PostInit
-    public void modsLoaded(FMLPostInitializationEvent event){
+	public void modsLoaded(FMLPostInitializationEvent event){
 		
 	}
 	
