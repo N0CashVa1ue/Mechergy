@@ -4,12 +4,14 @@ import java.util.logging.Logger;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.Configuration;
+
 import suitedslime.mechergy.block.MechergyBlocks;
 import suitedslime.mechergy.core.proxy.CommonProxy;
 import suitedslime.mechergy.creativetab.CreativeTabMech;
 import suitedslime.mechergy.item.MechergyItems;
 import suitedslime.mechergy.lib.Reference;
 import suitedslime.mechergy.recipe.MechergyRecipes;
+
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -43,15 +45,15 @@ public class Mechergy {
 	public void preInit(FMLPreInitializationEvent event) {
 		mLog.setParent(FMLLog.getLogger());
 		mLog.info("Loading localization");
-		LanguageRegistry.instance().loadLocalization("/suitedslime/mechergy/en_GB.properties", "en_GB", false);
+		LanguageRegistry.instance().loadLocalization("/suitedslime/mechergy/lang/en_GB.properties", "en_GB", false);
 		mLog.info("Loading Config");
 		loadConfig(event);
 		mLog.info("Adding Items");
 		MechergyItems.registerItems();
+		mLog.info("Adding Blocks");
+		MechergyBlocks.registerBlocks();
 		mLog.info("Adding Recipes");
 		MechergyRecipes.getInstance().RegisterRecipes();
-		
-		
 	}
 
 	@Init
@@ -72,6 +74,7 @@ public class Mechergy {
 		 	MechergyBlocks.loadConfig(config);
 		 	MechergyItems.loadConfig(config);
 		 	config.save();
+		 	this.config = config;
 		 }
 	}
 }

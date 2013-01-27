@@ -1,6 +1,7 @@
 package suitedslime.mechergy.item;
 
 import suitedslime.mechergy.Mechergy;
+import suitedslime.mechergy.lib.Sprites;
 import suitedslime.mechergy.lib.Strings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -26,6 +27,9 @@ public class ItemGear extends Item{
 		return super.getItemName() + "." + gearNames[par1ItemStack.getItemDamage()];
 	}
 	
-	
+	@Override
+    public String getTextureFile() {
+        return Sprites.SPRITE_SHEET_LOCATION + Sprites.ITEM_SPRITE_SHEET;
+    }
 	
 }
